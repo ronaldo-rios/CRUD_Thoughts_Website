@@ -4,10 +4,18 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const flash = require('express-flash');
 const connection = require('./database/connection'); 
-const { request } = require('http');
-const { response } = require('express');
 
 const app = express();
+// Models:
+const Thought = require('./models/Thought');
+const User = require('./models/User');
+// Import Routes:
+const thoughtsRoutes = require('./routes/thoughtsRoutes');
+// Import Controllers:
+const ThoughtController = require('./controllers/ThoughtController');
+//Routes:
+app.use('thoughts', thoughtsRoutes);
+app.get('/', ThoughtController.showThoughts);
 
 //Template engine:
 app.engine('handlebars', express_handlebars.engine());
@@ -57,7 +65,7 @@ app.use((request, response, next) => {
     next();
     
 });
-
+// sync({force:true})
 connection.sync()
     .then(() => {app.listen(3000)})
     .catch((error) => console.log(error));
