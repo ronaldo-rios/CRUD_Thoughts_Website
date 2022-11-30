@@ -11,11 +11,15 @@ const Thought = require('./models/Thought');
 const User = require('./models/User');
 // Import Routes:
 const thoughtsRoutes = require('./routes/thoughtsRoutes');
+const authRoutes = require('./routes/authRoutes');
 // Import Controllers:
 const ThoughtController = require('./controllers/ThoughtController');
+const AuthController = require('./controllers/AuthController');
 //Routes:
 app.use('thoughts', thoughtsRoutes);
 app.get('/', ThoughtController.showThoughts);
+app.use('/', authRoutes);
+
 
 //Template engine:
 app.engine('handlebars', express_handlebars.engine());
