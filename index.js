@@ -22,13 +22,13 @@ const ThoughtController = require('./controllers/ThoughtController');
 app.engine('handlebars', express_handlebars.engine());
 app.set('view engine', 'handlebars');
 
-app.use(express.json());
 //Receive response from body:
 app.use(express.urlencoded(
     {
         extended: true
     }
     ));
+app.use(express.json());
 
 
 //Session middleware:
@@ -56,6 +56,15 @@ app.use(flash());
 
 //Public path for assets:
 app.use(express.static('public'));
+
+//set session to response:
+app.use((request, response, next) => {
+    if(request.session.userid){
+        response.locals.session = request.session
+    }
+
+    next();
+})
 
 //Routes:
 app.use('thoughts', thoughtsRoutes);

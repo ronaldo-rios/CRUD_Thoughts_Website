@@ -124,11 +124,11 @@ form input[type="submit"]:hover, .btn:hover {
 
 .message {
     padding:1em;
-    color:#c0000a;
-    background-color: #ffccd7;
-    border: 1px solid #ffb8c2;
+    color:#027baa;
+    background-color: #ccebff;
+    border: 1px solid #b8cbff;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 7px;
     margin: 0 auto 2em;
     max-width: 60%;
 }
