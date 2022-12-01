@@ -26,6 +26,12 @@
     </nav>
     </header>
     <div class="container">
+        {{#if message}}
+        <div class="message">
+            {{message}}
+        </div>
+        {{/if}}
+
         {{{ body }}}
     </div>
     <footer>

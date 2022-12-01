@@ -4,7 +4,7 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const flash = require('express-flash');
 const connection = require('./database/connection'); 
-
+const bodyParser = require('body-parser');
 const app = express();
 // Models:
 const Thought = require('./models/Thought');
@@ -73,3 +73,5 @@ app.use((request, response, next) => {
 connection.sync()
     .then(() => {app.listen(3000)})
     .catch((error) => console.log(error));
+
+
