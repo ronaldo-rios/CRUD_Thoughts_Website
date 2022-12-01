@@ -4,37 +4,32 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 const flash = require('express-flash');
 const connection = require('./database/connection'); 
-const bodyParser = require('body-parser');
+
 const app = express();
+
 // Models:
 const Thought = require('./models/Thought');
 const User = require('./models/User');
+
 // Import Routes:
 const thoughtsRoutes = require('./routes/thoughtsRoutes');
 const authRoutes = require('./routes/authRoutes');
+
 // Import Controllers:
 const ThoughtController = require('./controllers/ThoughtController');
-const AuthController = require('./controllers/AuthController');
-//Routes:
-app.use('thoughts', thoughtsRoutes);
-app.get('/', ThoughtController.showThoughts);
-app.use('/', authRoutes);
-
 
 //Template engine:
 app.engine('handlebars', express_handlebars.engine());
 app.set('view engine', 'handlebars');
 
-//Public path for assets:
-app.use(express.static('public'));
-
+app.use(express.json());
 //Receive response from body:
 app.use(express.urlencoded(
     {
         extended: true
     }
     ));
-app.use(express.json());
+
 
 //Session middleware:
 app.use(
@@ -56,19 +51,18 @@ app.use(
     })
 );
 
-// Flash messages:
+// flash messages
 app.use(flash());
 
-//Configure session to reply:
-app.use((request, response, next) => {
+//Public path for assets:
+app.use(express.static('public'));
 
-    if(request.session.userid){
-        response.locals.session = request.session
-    }
+//Routes:
+app.use('thoughts', thoughtsRoutes);
+app.get('/', ThoughtController.showThoughts);
+app.use('/', authRoutes);
 
-    next();
-    
-});
+
 // sync({force:true})
 connection.sync()
     .then(() => {app.listen(3000)})

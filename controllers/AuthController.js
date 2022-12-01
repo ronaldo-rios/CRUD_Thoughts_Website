@@ -1,5 +1,4 @@
 const User = require('../models/User');
-const bodyParser = require('body-parser');
 
 // Never save the raw password in the database. We use a library to encrypt the password:
 const bcrypt = require('bcryptjs');
