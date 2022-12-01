@@ -124,9 +124,9 @@ form input[type="submit"]:hover, .btn:hover {
 
 .message {
     padding:1em;
-    color:#004085;
-    background-color: #cce5ff;
-    border: 1px solid #b8baff;
+    color:#c0000a;
+    background-color: #ffccd7;
+    border: 1px solid #ffb8c2;
     text-align: center;
     border-radius: 5px;
     margin: 0 auto 2em;
