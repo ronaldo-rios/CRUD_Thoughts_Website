@@ -1,7 +1,8 @@
 const Thought = require('../models/Thought');
 const User = require('../models/User');
 
-const { operator } = require('sequelize');
+//Object to perform LIKE access to the Search part on the site
+const { Op } = require('sequelize');
 
 module.exports = class ThoughtController {
 
@@ -10,14 +11,32 @@ module.exports = class ThoughtController {
         let search = ''
 
         if(request.query.search){
-            request.query.search
+            search = request.query.search
+        }
+
+        let order = 'DESC'
+        if(request.query.order == 'old'){
+            order = 'ASC'
+        }
+        else {
+            order = 'DESC'
         }
 
         const thoughtsData = await Thought.findAll({
-            include: User
+            include: User,
+            where: {
+                title: { [Op.like]: `%${search}%` }
+            },
+            order: [['createdAt', order]]
         })
         const thoughts = thoughtsData.map((result) => result.get({plain: true}))
-        response.render('thoughts/home', {thoughts})
+
+        let thoughtQty = thoughts.length
+        if(thoughtQty === 0){
+            thoughtQty = false
+        }
+
+        response.render('thoughts/home', {thoughts, search, thoughtQty})
     }
 
     static async dashboard(request, response) {
