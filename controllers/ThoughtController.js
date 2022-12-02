@@ -1,9 +1,17 @@
 const Thought = require('../models/Thought');
 const User = require('../models/User');
 
+const { operator } = require('sequelize');
+
 module.exports = class ThoughtController {
 
     static async showThoughts(request, response) {
+
+        let search = ''
+
+        if(request.query.search){
+            request.query.search
+        }
 
         const thoughtsData = await Thought.findAll({
             include: User

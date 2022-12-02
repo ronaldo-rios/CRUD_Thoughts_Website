@@ -241,3 +241,97 @@ form input[type="submit"]:hover, .btn:hover {
     font-weight: bold;
 }
 
+.home-header {
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    text-align: center;
+}
+
+.home-header h1 {
+    margin-bottom: 10px;
+}
+
+.home-header span {
+    color: #00b5f1;  
+}
+
+.home-header p, .home-header form {
+    margin-bottom: 10px;
+}
+
+.home-header input {
+    border: none;
+    border-bottom: 2px solid #fff;
+    padding: 3px;
+    margin-right: 1em;
+}
+
+.home-header input[type="text"] {
+    width: 60%;
+
+}
+
+.home-header input::placeholder {
+    color: rgb(122, 122, 122);
+}
+
+.order-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto 10px;
+
+}
+
+.order-container span {
+    font-weight: bold;
+    color: #4fcffa;
+    margin-right: 10px;
+}
+
+.order-container form {
+    margin: 0;
+}
+
+.order-container i {
+    margin: 0px;
+    border: none;
+    cursor: pointer;
+    color: #036b7e;
+    padding: 2px;
+    background-color: #fff;
+}
+
+.order-container i:hover {
+    background-color: #03ace9;
+    color:#fff;
+}
+
+.order-container a {
+    color: #fff;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.order-container a:hover {
+    color: #00b5f1;   
+}
+
+.thoughts-container figure {
+    border-bottom: 1px solid #fff;
+    padding: 1.5em;
+    max-width: 50%;
+    margin: 0 auto 1em;
+}
+
+.thoughts-container blockquote {
+    font-style: italic;
+    font-size: 2em;
+    margin-bottom: 0.4em;
+}
+
+.thoughts-container span {
+    color:#c4edfa;
+}
