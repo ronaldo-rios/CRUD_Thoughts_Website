@@ -67,7 +67,7 @@ app.use((request, response, next) => {
 })
 
 //Routes:
-app.use('thoughts', thoughtsRoutes);
+app.use('/thoughts', thoughtsRoutes);
 app.get('/', ThoughtController.showThoughts);
 app.use('/', authRoutes);
 
