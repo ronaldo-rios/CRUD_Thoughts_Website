@@ -6,7 +6,7 @@
 
 body {
     background-color: #086788;
-    color:#FFF;
+    color: #FFF;
 }
 
 #navbar {
@@ -20,7 +20,7 @@ body {
 }
 
 #navbar ul {
-    display:flex;
+    display: flex;
     list-style-type: none;
 }
 
@@ -32,11 +32,11 @@ body {
     text-decoration: none;
     transition: 0.5s;
     font-weight: bold;
-    color:#086788;
+    color: #086788;
 }
 
 #navbar ul li a:hover {
-    color:#00b5f1
+    color: #00b5f1
 }
 
 .container {
@@ -59,9 +59,9 @@ span {
 }
 
 .auth-container {
-    max-width:450px;
+    max-width: 450px;
     margin: 0 auto;
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
 
@@ -73,17 +73,17 @@ span {
 }
 
 .auth-container a {
-    color:#fff;
+    color: #fff;
     font-weight: bold;
 }
 
 .auth-container a:hover {
-    color:#00b5f1;
+    color: #00b5f1;
     font-weight: bold;
 }
 
 .form-control {
-    display:flex;
+    display: flex;
     flex-direction: column;
     margin-bottom: 1em;
 }
@@ -95,38 +95,41 @@ label {
 
 input {
     border-radius: 10px;
-    height:30px;
+    height: 30px;
     padding: 7px;
     border: 1px solid #00b5f1;
     font-size: medium;
 }
 
-form input[type="submit"]{
+form input[type="submit"] {
     background-color: rgb(3, 167, 58);
     color: white;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0.5em 1.3em;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
     font-weight: 700;
     border: 1px solid rgb(3, 167, 58);
-    margin-bottom: 15px;
-    font-size: 15px;
+    font-size: 1em;
     cursor: pointer;
     text-decoration: none;
-    transition:0.5s;
+    transition: 0.5s;
     border-radius: 10px;
+    margin-bottom: 1.5em;
+
 }
 
-form input[type="submit"]:hover, .btn:hover {
+form input[type="submit"]:hover,
+.btn:hover {
     background-color: white;
     color: #00b5f1;
     border: 2px solid #00b5f1;
 }
 
 .message {
-    padding:1em;
-    color:#027baa;
+    padding: 1em;
+    color: #027baa;
     background-color: #ccebff;
     border: 1px solid #b8cbff;
     text-align: center;
@@ -141,14 +144,14 @@ form input[type="submit"]:hover, .btn:hover {
 }
 
 .thought-form-container a:hover {
-    color: #00b5f1;   
+    color: #00b5f1;
 }
 
 .thought-form-container h1 {
     margin: 1em 0;
     color: #fff;
     padding: 0.3em;
-    width: 300px;  
+    width: 300px;
 }
 
 .thought-form-container form {
@@ -158,13 +161,13 @@ form input[type="submit"]:hover, .btn:hover {
 }
 
 .title-container {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     margin-bottom: 1.5em;
 }
 
 .title container h2 {
-    padding:10px;
+    padding: 10px;
 }
 
 .dashboard h3 {
@@ -185,56 +188,73 @@ form input[type="submit"]:hover, .btn:hover {
 
 .dashboard .label {
     font-weight: bold;
-    color:#b8cbff;
+    color: #b8cbff;
 }
 
 .dashboard .actions {
     display: flex;
 }
+
 .btn {
     background-color: rgb(3, 167, 58);
     color: white;
+    padding: 0.5em 1.3em;
     padding-top: 15px;
     padding-bottom: 18px;
     padding-left: 20px;
     padding-right: 20px;
     font-weight: 700;
     border: 1px solid rgb(3, 167, 58);
-    margin-bottom: 15px;
-    font-size: 15px;
+    margin-bottom: 0.5em;
+    font-size: 1em;
     cursor: pointer;
     text-decoration: none;
-    transition:0.5s;
+    transition: 0.5s;
     border-radius: 10px;
 }
 
 .dashboard .actions .btn {
-    margin: 10px;
+    margin-left: 5px;
     color: #fff;
-    border-color: #fff;
+    border-color: #fff; 
     background-color: rgb(216, 159, 2);
-    padding-bottom: 4px;
+    padding-bottom: 30px;
     padding-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     font-weight: 600;
     border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
     transition:0.5s;
+    font-size: 20px;
+    margin-bottom: 1.5em; 
 }
+
 .dashboard .actions .btn:hover {
     background-color: white;
     color: #00b5f1;
     border: 2px solid #00b5f1;
 }
 
-
-.dashboard .actions {
+.dashboard .actions #btn-y{
+    margin-left: 5px;
     color: #fff;
-    margin: 0 0.5em;
-    border-color: #fff;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(216, 159, 2);
+    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition:0.5s;
+    font-size: 20px;
+    margin-bottom: 1.5em; 
 }
+
 
 .dashboard a {
     color: white;
@@ -244,7 +264,7 @@ form input[type="submit"]:hover, .btn:hover {
 .home-header {
     display: flex;
     justify-content: center;
-    flex-direction:column;
+    flex-direction: column;
     text-align: center;
 }
 
@@ -253,10 +273,11 @@ form input[type="submit"]:hover, .btn:hover {
 }
 
 .home-header span {
-    color: #00b5f1;  
+    color: #00b5f1;
 }
 
-.home-header p, .home-header form {
+.home-header p,
+.home-header form {
     margin-bottom: 10px;
 }
 
@@ -269,7 +290,7 @@ form input[type="submit"]:hover, .btn:hover {
 
 .home-header input[type="text"] {
     width: 60%;
-
+    padding: 5px;
 }
 
 .home-header input::placeholder {
@@ -306,7 +327,7 @@ form input[type="submit"]:hover, .btn:hover {
 
 .order-container i:hover {
     background-color: #03ace9;
-    color:#fff;
+    color: #fff;
 }
 
 .order-container a {
@@ -316,7 +337,7 @@ form input[type="submit"]:hover, .btn:hover {
 }
 
 .order-container a:hover {
-    color: #00b5f1;   
+    color: #00b5f1;
 }
 
 .thoughts-container figure {
@@ -333,5 +354,5 @@ form input[type="submit"]:hover, .btn:hover {
 }
 
 .thoughts-container span {
-    color:#c4edfa;
+    color: #c4edfa;
 }

@@ -12,7 +12,7 @@
                 <span class="label">{{this.title}}</span>
                 <span class="actions">
                 
-                <a href="/thoughts/edit/{{this.id}}" class="btn">Editar</a>
+                <a href="/thoughts/edit/{{this.id}}" id="btn-y">Editar</a>
                 <form action="/thoughts/remove" method="POST">
                     <input type="hidden" name="id" value="{{this.id}}">
                     <input type="submit" value="Exluir" class="btn">
